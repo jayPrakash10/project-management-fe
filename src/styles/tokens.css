@@ -1,0 +1,263 @@
+/*
+ * TaskFlow design tokens.
+ *
+ * Two independent axes, both set on <html>:
+ *   data-mode   = light | dark
+ *   data-accent = coral | indigo | emerald | amber | violet | ocean
+ *
+ * Components never use raw colors. They use the Tailwind utilities generated
+ * from these variables in globals.css (bg-surface, text-fg-muted, bg-accent, ...).
+ */
+
+/* ---------- Neutrals + semantic colors: light ---------- */
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f1f2f4;
+  --surface-3: #e8eaed;
+  --border: #e1e4e8;
+  --border-strong: #c9ced6;
+  --fg: #1e1f21;
+  --fg-muted: #4d535c;
+  --fg-subtle: #5f6672;
+  --overlay: rgb(15 16 18 / 0.45);
+
+  --sidebar: #1e1f21;
+  --sidebar-fg: #e6e7e9;
+  --sidebar-muted: #a1a6ae;
+  --sidebar-hover: rgb(255 255 255 / 0.06);
+  --sidebar-active: rgb(255 255 255 / 0.11);
+  --sidebar-border: rgb(255 255 255 / 0.08);
+
+  --danger: #c62828;
+  --danger-hover: #a91f1f;
+  --on-danger: #ffffff;
+  --danger-soft: #fde7e7;
+  --danger-soft-fg: #b42318;
+  --success: #1b7f4b;
+  --success-soft: #e3f4ea;
+  --success-soft-fg: #1b7044;
+  --warning: #a15c00;
+  --warning-soft: #fdf0dc;
+  --warning-soft-fg: #9a5200;
+
+  --status-todo-bg: #eef0f3;
+  --status-todo-fg: #4a515c;
+  --status-todo-solid: #eda100;
+  --status-progress-bg: #e3eefd;
+  --status-progress-fg: #1d5bbf;
+  --status-progress-solid: #2a78d6;
+  --status-review-bg: #fdebe3;
+  --status-review-fg: #b4461c;
+  --status-review-solid: #eb6834;
+  --status-done-bg: #e3f4ea;
+  --status-done-fg: #1b7044;
+  --status-done-solid: #1baf7a;
+
+  --priority-low-bg: #eef0f3;
+  --priority-low-fg: #4a515c;
+  --priority-medium-bg: #e6f1fb;
+  --priority-medium-fg: #1f5e99;
+  --priority-high-bg: #fdf0dc;
+  --priority-high-fg: #9a5200;
+  --priority-urgent-bg: #fde7e7;
+  --priority-urgent-fg: #b42318;
+
+  --avatar-1-bg: #e3eefd;
+  --avatar-1-fg: #1d5bbf;
+  --avatar-2-bg: #e3f4ea;
+  --avatar-2-fg: #1b7044;
+  --avatar-3-bg: #f1e9fd;
+  --avatar-3-fg: #6b32c4;
+  --avatar-4-bg: #fdf0dc;
+  --avatar-4-fg: #9a5200;
+  --avatar-5-bg: #fde7e7;
+  --avatar-5-fg: #b42318;
+  --avatar-6-bg: #e2f3f5;
+  --avatar-6-fg: #14676f;
+
+  --shadow-xs-value: 0 1px 2px rgb(16 24 40 / 0.06);
+  --shadow-sm-value: 0 1px 3px rgb(16 24 40 / 0.1), 0 1px 2px rgb(16 24 40 / 0.06);
+  --shadow-md-value: 0 6px 16px -4px rgb(16 24 40 / 0.14), 0 2px 4px -2px rgb(16 24 40 / 0.06);
+  --shadow-lg-value: 0 20px 48px -12px rgb(16 24 40 / 0.28);
+}
+
+/* ---------- Neutrals + semantic colors: dark ---------- */
+:root[data-mode='dark'] {
+  --bg: #121315;
+  --surface: #1a1b1e;
+  --surface-2: #232428;
+  --surface-3: #2c2e33;
+  --border: #2f3136;
+  --border-strong: #3e4148;
+  --fg: #edeef0;
+  --fg-muted: #a9aeb7;
+  --fg-subtle: #8a909a;
+  --overlay: rgb(0 0 0 / 0.6);
+
+  --sidebar: #0e0f11;
+  --sidebar-fg: #e6e7e9;
+  --sidebar-muted: #a1a6ae;
+
+  --danger: #f28b82;
+  --danger-hover: #f5a39c;
+  --on-danger: #141517;
+  --danger-soft: #3d1c1b;
+  --danger-soft-fg: #f59e97;
+  --success: #6dd49c;
+  --success-soft: #173226;
+  --success-soft-fg: #7fd6a4;
+  --warning: #f5b94a;
+  --warning-soft: #3a2a12;
+  --warning-soft-fg: #f5be6e;
+
+  --status-todo-bg: #2a2c31;
+  --status-todo-fg: #b4b9c2;
+  --status-todo-solid: #c98500;
+  --status-progress-bg: #1c2b44;
+  --status-progress-fg: #8db8f7;
+  --status-progress-solid: #3987e5;
+  --status-review-bg: #3d2418;
+  --status-review-fg: #f5a47f;
+  --status-review-solid: #d95926;
+  --status-done-bg: #173226;
+  --status-done-fg: #7fd6a4;
+  --status-done-solid: #199e70;
+
+  --priority-low-bg: #2a2c31;
+  --priority-low-fg: #b4b9c2;
+  --priority-medium-bg: #1b2c3d;
+  --priority-medium-fg: #93c1ec;
+  --priority-high-bg: #3a2a12;
+  --priority-high-fg: #f5be6e;
+  --priority-urgent-bg: #3d1c1b;
+  --priority-urgent-fg: #f59e97;
+
+  --avatar-1-bg: #1c2b44;
+  --avatar-1-fg: #8db8f7;
+  --avatar-2-bg: #173226;
+  --avatar-2-fg: #7fd6a4;
+  --avatar-3-bg: #2c2344;
+  --avatar-3-fg: #c3a6f5;
+  --avatar-4-bg: #3a2a12;
+  --avatar-4-fg: #f5be6e;
+  --avatar-5-bg: #3d1c1b;
+  --avatar-5-fg: #f59e97;
+  --avatar-6-bg: #163235;
+  --avatar-6-fg: #7fd3da;
+
+  --shadow-xs-value: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-sm-value: 0 1px 3px rgb(0 0 0 / 0.4), 0 1px 2px rgb(0 0 0 / 0.25);
+  --shadow-md-value: 0 6px 16px -4px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg-value: 0 20px 48px -12px rgb(0 0 0 / 0.65);
+}
+
+/* ---------- Accent palettes ----------
+ * Scoped to any element with data-accent (not only <html>) so the theme picker
+ * can preview a palette: <span data-accent="indigo" class="bg-accent">.
+ * --accent-sidebar is always the bright (dark-mode) variant, because the
+ * sidebar is charcoal in both modes.
+ */
+:root,
+[data-accent='coral'] {
+  --accent: #c93b36;
+  --accent-hover: #b0312d;
+  --on-accent: #ffffff;
+  --accent-soft: #fdeceb;
+  --accent-soft-fg: #9e2c28;
+  --accent-sidebar: #f07a72;
+}
+:root[data-mode='dark'],
+[data-mode='dark'][data-accent='coral'],
+[data-mode='dark'] [data-accent='coral'] {
+  --accent: #f07a72;
+  --accent-hover: #f49690;
+  --on-accent: #141517;
+  --accent-soft: #3a1f1e;
+  --accent-soft-fg: #f5a39d;
+}
+
+[data-accent='indigo'] {
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --on-accent: #ffffff;
+  --accent-soft: #eef0ff;
+  --accent-soft-fg: #3730a3;
+  --accent-sidebar: #a5b4fc;
+}
+[data-mode='dark'][data-accent='indigo'],
+[data-mode='dark'] [data-accent='indigo'] {
+  --accent: #a5b4fc;
+  --accent-hover: #c0cbfd;
+  --on-accent: #141517;
+  --accent-soft: #23264a;
+  --accent-soft-fg: #c0cbfd;
+}
+
+[data-accent='emerald'] {
+  --accent: #047857;
+  --accent-hover: #065f46;
+  --on-accent: #ffffff;
+  --accent-soft: #e6f5ef;
+  --accent-soft-fg: #065f46;
+  --accent-sidebar: #34d399;
+}
+[data-mode='dark'][data-accent='emerald'],
+[data-mode='dark'] [data-accent='emerald'] {
+  --accent: #34d399;
+  --accent-hover: #6ee7b7;
+  --on-accent: #141517;
+  --accent-soft: #133328;
+  --accent-soft-fg: #6ee7b7;
+}
+
+[data-accent='amber'] {
+  --accent: #b45309;
+  --accent-hover: #92400e;
+  --on-accent: #ffffff;
+  --accent-soft: #fef3e2;
+  --accent-soft-fg: #92400e;
+  --accent-sidebar: #fbbf24;
+}
+[data-mode='dark'][data-accent='amber'],
+[data-mode='dark'] [data-accent='amber'] {
+  --accent: #fbbf24;
+  --accent-hover: #fcd34d;
+  --on-accent: #141517;
+  --accent-soft: #3a2c10;
+  --accent-soft-fg: #fcd34d;
+}
+
+[data-accent='violet'] {
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --on-accent: #ffffff;
+  --accent-soft: #f3eeff;
+  --accent-soft-fg: #5b21b6;
+  --accent-sidebar: #c4b5fd;
+}
+[data-mode='dark'][data-accent='violet'],
+[data-mode='dark'] [data-accent='violet'] {
+  --accent: #c4b5fd;
+  --accent-hover: #ddd6fe;
+  --on-accent: #141517;
+  --accent-soft: #2d2445;
+  --accent-soft-fg: #ddd6fe;
+}
+
+[data-accent='ocean'] {
+  --accent: #0369a1;
+  --accent-hover: #075985;
+  --on-accent: #ffffff;
+  --accent-soft: #e6f3fa;
+  --accent-soft-fg: #075985;
+  --accent-sidebar: #7dd3fc;
+}
+[data-mode='dark'][data-accent='ocean'],
+[data-mode='dark'] [data-accent='ocean'] {
+  --accent: #7dd3fc;
+  --accent-hover: #bae6fd;
+  --on-accent: #141517;
+  --accent-soft: #12303f;
+  --accent-soft-fg: #bae6fd;
+}
